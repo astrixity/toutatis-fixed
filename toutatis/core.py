@@ -123,8 +123,9 @@ def main():
     
     if infos["external_url"]:
         print("External url           : " + infos["external_url"])
+        
     if "total_igtv_videos" in infos:
-    print("IGTV posts             : " + str(infos["total_igtv_videos"]))
+        print("IGTV posts             : " + str(infos["total_igtv_videos"]))
 
     if "biography" in infos:
         print("Biography              : " + (f"""\n{" " * 25}""").join(infos["biography"].split("\n")))
