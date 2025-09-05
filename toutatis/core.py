@@ -120,17 +120,26 @@ def main():
         "Follower               : " + str(infos["follower_count"]) + " | Following : " + str(infos["following_count"]))
     print("Number of posts        : " + str(infos["media_count"]))
     # print("Number of tag in posts : "+str(infos["following_tag_count"]))
+    
     if infos["external_url"]:
         print("External url           : " + infos["external_url"])
+    if "total_igtv_videos" in infos:
     print("IGTV posts             : " + str(infos["total_igtv_videos"]))
-    print("Biography              : " + (f"""\n{" " * 25}""").join(infos["biography"].split("\n")))
-    print("Linked WhatsApp        : " + str(infos["is_whatsapp_linked"]))
-    print("Memorial Account       : " + str(infos["is_memorialized"]))
-    print("New Instagram user     : " + str(infos["is_new_to_instagram"]))
 
-    if "public_email" in infos.keys():
-        if infos["public_email"]:
-            print("Public Email           : " + infos["public_email"])
+    if "biography" in infos:
+        print("Biography              : " + (f"""\n{" " * 25}""").join(infos["biography"].split("\n")))
+    
+    if "is_whatsapp_linked" in infos:
+        print("Linked WhatsApp        : " + str(infos["is_whatsapp_linked"]))
+    
+    if "is_memorialized" in infos:
+        print("Memorial Account       : " + str(infos["is_memorialized"]))
+    
+    if "is_new_to_instagram" in infos:
+        print("New Instagram user     : " + str(infos["is_new_to_instagram"]))
+    
+    if "public_email" in infos and infos["public_email"]:
+        print("Public Email           : " + infos["public_email"])
 
     if "public_phone_number" in infos.keys():
         if str(infos["public_phone_number"]):
